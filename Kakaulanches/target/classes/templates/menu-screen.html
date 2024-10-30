@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>KakauLanches - Cardápio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/styleMenu.css}">
+    <link rel="stylesheet" th:href="@{/css/properties.css}">
+    <script th:src="@{/js/script.js}"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid mainP">
+        <nav class="container-fluid pad-nav">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
+                <a th:href="@{/}">
+                    <img class="img-fluid" style="width: 220px;" th:src="@{/img/Logo-black.png}" src="" alt="">
+                </a>
+
+                <a href="https://www.google.com/maps/place/Kakau+Lanches/@-2.542169,-44.2352423,3313m/data=!3m1!1e3!4m16!1m9!3m8!1s0x7f6903162674935:0x99f97e2a607c8155!2sKakau+Lanches!8m2!3d-2.542169!4d-44.2352423!9m1!1b1!16s%2Fg%2F1s04f2_p8!3m5!1s0x7f6903162674935:0x99f97e2a607c8155!8m2!3d-2.542169!4d-44.2352423!16s%2Fg%2F1s04f2_p8?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="black" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+
+
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img th:src="@{/img/burguer.png}" class="d-block w-80" alt="Burguer" src="">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/churrasquinho.jpeg}" class="d-block w-80" alt="Churrasquinho">
+                </div>
+                <div class="carousel-item">
+                    <img th:src="@{/img/hotdog.jpg}" class="d-block w-80" alt="Hotdog">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+
+
+        <div class="container-fluid">
+            <div class="d-flex fs-2" >
+                <p>Categorias Populares 🔥</p>
+            </div>
+
+            <div class="menu-items ">
+
+
+                <div id="color-gray" class="btn-group container-fluid overflow-x-auto btn-size-config" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">Burguer</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" >
+                    <label class="btn btn-outline-primary" for="btnradio2">HotDog</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio3">Churrasco</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio4">Espaguete</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio5">Pizza</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio6" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio6">Bebidas</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio7" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio7">Sobremesa</label>
+                </div>
+
+                <!--itens para ocultar-->
+
+
+                <!--BURGUER-->
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="category-items d-none" id="burguer-content">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    BURGUER TRADICIONAL
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 25,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, carne caseira, presunto, queijo, ovo, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="B-TRADICIONAL" data-price="25.00">ADICIONAR</button>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    X-BACON
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 18,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, carne caseira, presunto, queijo, ovo, bacon, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="X-BACON" data-price="18.00">ADICIONAR</button>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                    X-CALABRESA
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 18,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, carne caseira, presunto, queijo, ovo, calabresa, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="X-CALABRESA" data-price="18.00">ADICIONAR</button>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                    X-BURGUER
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 18,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, carne caseira, presunto, queijo, ovo, salsicha, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="X-BURGUER" data-price="18.00">ADICIONAR</button>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                                    X-TUDO
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 20,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, carne caseira, presunto, queijo, ovo, bacon, calabresa, salsicha, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="X-TUDO" data-price="20.00">ADICIONAR</button>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                                    X-KAKAU
+                                    <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 26,00</span>
+                                </button>
+                            </h2>
+                            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">Pão tradicional, 2 (duas) carnes caseiras, pão de forma, presunto, queijo, ovo, bacon, calabresa, salsicha, tomate, pepino e alface.</div>
+                                <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="X-KAKAU" data-price="26.00">ADICIONAR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--HOTDOG-->
+
+
+                <div class="category-items d-none" id="hotdog-content">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button id="spacearea" class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                                HOT DOG TRADICIONAL
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 15,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Pão de batata, molho da casa, carne moída salsicha, batata palha, salada, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="H-TRADICIONAL" data-price="15.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                                DOGÃO LOUCO
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 16,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Pão de batata, molho da casa, carne moída, salsicha, ovo cozido, batata palha, salada, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="DOGAO LOUCO" data-price="16.00">ADICIONAR</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--Churrasco-->
+                <div class="category-items d-none" id="churrasco-content">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                                CHURRAS CARNE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 20,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Espeto, arroz, farofa, saladas, purê ou vatapá (consultar o dia)</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="CHURRAS-CARNE" data-price="20.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                                CHURRAS FRANGO
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 20,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Espeto, arroz, farofa, saladas, purê ou vatapá (consultar o dia)</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="CHURRAS-FRANGO" data-price="20.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                                CHURRAS MISTO
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 20,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Espeto, arroz, farofa, saladas, purê ou vatapá (consultar o dia)</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="CHURRAS-MISTO" data-price="20.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <!--ESPAGUETES-->
+                <div class="category-items d-none" id="espaguete-content">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                                ESPAGUETE MISTO CARNE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 24,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Macarrão, molho da casa, carne moída, salsicha, batata palha, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="ESP-MISTO-CARNE" data-price="24.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+                                ESPAGUETE TIPO LASANHA DE CARNE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 28,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Macarrão, molho da casa, carne moída, salsicha, queijo, presunto, batata palha, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="ESP-LASANHA-CARNE" data-price="28.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFourteen" aria-expanded="false" aria-controls="flush-collapseFourteen">
+                                ESPAGUETE DE CALABRESA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 32,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Macarrão, molho da casa, carne moída, queijo, presunto, calabresa, batata palha, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="ESP-CALABRESA" data-price="32.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFifteen" aria-expanded="false" aria-controls="flush-collapseFifteen">
+                                ESPAGUETE DE BACON
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 32,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Macarrão, molho da casa, carne moída, queijo, presunto, bacon, batata palha, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="ESP-BACON" data-price="32.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSixteen" aria-expanded="false" aria-controls="flush-collapseSixteen">
+                                ESPAGUETE MODA DA CASA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 34,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSixteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Macarrão, molho da casa, carne moída, 2 (duas) salsichas, queijo, presunto, ovo frito, batata palha, milho verde e ervilha.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30" data-name="ESP-MODA-DA-CASA" data-price="34.00">ADICIONAR</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <!--PIZZA-->
+                <div class="category-items d-none" id="pizza-content">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeventeen" aria-expanded="false" aria-controls="flush-collapseSeventeen">
+                                PIZZA CALABRESA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 30,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseSeventeen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussatela, calabresa, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-CALABRESA" data-price="30.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEighteen" aria-expanded="false" aria-controls="flush-collapseEighteen">
+                                PIZZA NAPOLITANA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 30,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseEighteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussatela, presunto, tomate, pimentão, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-NAPOLITANO" data-price="30.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNineteen" aria-expanded="false" aria-controls="flush-collapseNineteen">
+                                PIZZA MUSSARELA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 30,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseNineteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussarela, tomate, pimentão, azeitona, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-MUSSARELA" data-price="30.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty" aria-expanded="false" aria-controls="flush-collapseTwenty">
+                                PIZZA PORTUGUESA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 35,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussarela, presunto, ovo cozido, tomate, pimentão, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-PORTUGUESA" data-price="35.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-One" aria-expanded="false" aria-controls="flush-collapseTwenty-One">
+                                PIZZA FRANGO
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 35,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-One" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussarela, frango desfiado, milho verde, ervilha, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-FRANGO" data-price="35.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Two" aria-expanded="false" aria-controls="flush-collapseTwenty-Two">
+                                PIZZA FRANGO C/ CATUPIRY
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 35,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Two" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">(Molho de tomate, queijo mussarela, frango desfiado, catupiry, milho verde, ervilha, cebola e orégano.)</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-FRANGO-CATUPIRY" data-price="35.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Three" aria-expanded="false" aria-controls="flush-collapseTwenty-Three">
+                                PIZZA TRÊS CARNES
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 35,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Three" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Molho de tomate, queijo mussarela, presunto, bacon, calabresa, cebola e orégano.</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="PIZZA-TRES-CARNES" data-price="35.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!--BEBIDAS-->
+                <div class="category-items d-none" id="bebidas-content">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Four" aria-expanded="false" aria-controls="flush-collapseTwenty-Four">
+                                COCA-COLA 300Ml
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 9,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Four" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="COCA-COLA" data-price="09.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Five" aria-expanded="false" aria-controls="flush-collapseTwenty-Five">
+                                GUARANA JESUS 300Ml
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 6,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Five" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="GUARANA-JESUS" data-price="06.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Six" aria-expanded="false" aria-controls="flush-collapseTwenty-Six">
+                                GUARANA ANTARTICA 300Ml
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 6,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Six" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="GUARANA-ANTARTICA" data-price="06.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Seven" aria-expanded="false" aria-controls="flush-collapseTwenty-Seven">
+                                SUCO DE ACEROLA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 10,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Seven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="SUCO-ACEROLA" data-price="10.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Eight" aria-expanded="false" aria-controls="flush-collapseTwenty-Eight">
+                                SUCO DE GOIABA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 10,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Eight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="SUCO-GOIABA" data-price="10.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwenty-Nine" aria-expanded="false" aria-controls="flush-collapseTwenty-Nine">
+                                SUCO DE MARACUJA
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 10,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwenty-Nine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="SUCO-MARACUJA" data-price="10.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <!--sobremesas-->
+
+                <div class="category-items d-none" id="sobremesas-content">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirty" aria-expanded="false" aria-controls="flush-collapseThirty">
+                                SALADA DE FRUTAS
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 14,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirty" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="SALADA-DE-FRUTAS" data-price="14.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirty-One" aria-expanded="false" aria-controls="flush-collapseThirty-One">
+                                AÇAI 500ML
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 18,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirty-One" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="AÇAI" data-price="18.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirty-Two" aria-expanded="false" aria-controls="flush-collapseThirty-Two">
+                                FATIA DE BROWNIE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 15,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirty-Two" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Consultar disponibilidade</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="FATIA-BROWNIE" data-price="15.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirty-Three" aria-expanded="false" aria-controls="flush-collapseThirty-Three">
+                                COPO DA FELICIDADE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 15,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirty-Three" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Consultar disponibilidade</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="COPO-FELICIDADE" data-price="15.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed txt-list-ocl" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirty-Four" aria-expanded="false" aria-controls="flush-collapseThirty-Four">
+                                BOLO DE POTE
+                                <span class="item-preco" style="margin-left: 40px; font-weight: bold;">R$ 12,00</span>
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThirty-Four" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Consultar disponibilidade</div>
+                            <button type="button" class="btn btn-primary btn-contador d-flex w-30"  data-name="BOLO-DE-POTE" data-price="12.00">ADICIONAR</button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<footer>
+
+
+    <button type="button" class="btn btn-primary position-relative" onclick="hide()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="86" height="86" fill="white" class="bi bi-cart4" viewBox="0 0 16 16">
+            <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5M3.14 5l.5 2H5V5zM6 5v2h2V5zm3 0v2h2V5zm3 0v2h1.36l.5-2zm1.11 3H12v2h.61zM11 8H9v2h2zM8 8H6v2h2zM5 8H3.89l.5 2H5zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0m9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0"/>
+        </svg>
+
+        <span class="position-absolute top-0 start-80 translate-middle badge rounded-pill bg-danger" id="contador-span">
+            0
+            <span class="visually-hidden">Adicionados</span>
+        </span>
+    </button>
+
+
+    <div id="show" class="showDiv" style="display: none;justify-content: center;">
+
+        <div class="txt-divhide">
+            <h2>RESUMO DO PEDIDO</h2>
+        </div>
+
+        <div class="Items-add" id="itens-adicionados">
+
+
+        </div>
+
+        <div class="Valor-total-items"></div>
+
+
+
+        <div class="btn-group" style="position: absolute; bottom: 4rem; left: 50%; transform: translateX(-50%);">
+            <button id="mainButton" class="btn btn-secondary btn-lg" type="button">
+                Pagar com:
+            </button>
+            <button type="button" class="btn btn-lg btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="visually-hidden">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-option="Pix">Pix</a></li>
+                <li><a class="dropdown-item" href="#" data-option="Dinheiro">Dinheiro</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+</footer>
+</html>

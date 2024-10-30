@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Joti+One&display=swap');
+
+:root{
+--font-primary: "Joti One";
+--color-txt-login: #ff0000; /*vermelho*/
+--color-txt-black: #000; /*preto*/
+--color-txt-white: #fff; /*branco*/
+--color-gray: #b1afaf;
+--color-menuList: #999999;
+--color-divhide: #140903;
+}
